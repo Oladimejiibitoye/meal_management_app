@@ -1,11 +1,8 @@
-// Update with your config settings.
+import 'dotenv/config'
+import { knexSnakeCaseMappers } from 'objection';
 
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
+
 module.exports = {
-
-  development: {
     client: 'pg',
     connection: {
       host: process.env.DATABASE_HOST,
@@ -14,8 +11,9 @@ module.exports = {
       password: process.env.DATABASE_PASSWORD
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+      directory: './src/database/migrations'
+    },
+
+    ...knexSnakeCaseMappers()
 
 };
