@@ -1,4 +1,4 @@
-import { Injectable, BadRequestException, ForbiddenException } from '@nestjs/common';
+import { Injectable, BadRequestException, ForbiddenException, NotFoundException } from '@nestjs/common';
 import { InjectModel, synchronize, InjectConnection, Connection} from 'nestjs-objection';
 import { UserModel } from 'src/database/models/user.model';
 import { JwtService } from '@nestjs/jwt';
@@ -41,12 +41,12 @@ export class UsersService {
       const user = await this.userModel.query().where({ name: signinDto.name})
       // return console.log(user)
       if(user.length === 0){
-        throw new BadRequestException('User Not Found, Invalid Credentials')
+        throw new NotFoundException('User Not Found, Invalid Credentials')
       }
       //generate access token 
       const token = await this.jwtTokenService.sign({id: user[0].id}, {
         secret: process.env.JWT_SECRET_KEY,
-        expiresIn: process.env.JWT_EXPIRATION
+        expiresIn: Number(process.env.JWT_EXPIRATION)
       });
       return { user, token }
     } catch (error){

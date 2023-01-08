@@ -14,13 +14,13 @@ export class AddonModel extends BaseModel {
   @Column({type: columnTypes.string})
   category: string;
   @Column({ type: columnTypes.uuid})
-  brand_Id: string;
+  brand_id: string;
   @Column({ type: columnTypes.uuid})
   addons_category_id: string;
   @Relation({
     modelClass: BrandModel,
     relation: relationTypes.BelongsToOneRelation,
-    join: { from: 'addons.brand_Id', to: 'brands.id'}
+    join: { from: 'addons.brand_id', to: 'brands.id'}
   })
   brand: BrandModel;
   @Relation({

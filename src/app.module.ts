@@ -2,15 +2,10 @@ import 'dotenv/config'
 import { Module} from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { KnexModule } from 'nest-knexjs';
 import { UsersController } from './users/users.controller';
 import { UsersModule } from './users/users.module';
-import { AddonsController } from './addons/addons.controller';
-import { AddonsModule } from './addons/addons.module';
 import { BrandsController } from './brands/brands.controller';
 import { BrandsModule } from './brands/brands.module';
-import { AddonsCategoriesController } from './addons_categories/addons_categories.controller';
-import { AddonsCategoriesModule } from './addons_categories/addons_categories.module';
 import { ObjectionModule, Model } from 'nestjs-objection';
 import { UserModel } from './database/models/user.model';
 import { BrandModel } from './database/models/brand.model';
@@ -18,6 +13,7 @@ import { AddonCategoryModel } from './database/models/addonCategory.model';
 import { AddonModel } from './database/models/addon.model';
 import { UsersService } from './users/users.service';
 import { JwtService } from '@nestjs/jwt/dist';
+import { BrandsService } from './brands/brands.service';
 
 @Module({
   imports: [
@@ -41,11 +37,9 @@ import { JwtService } from '@nestjs/jwt/dist';
       AddonModel
     ]),
     UsersModule,
-    AddonsModule,
     BrandsModule,
-    AddonsCategoriesModule
   ],
-  controllers: [AppController, UsersController, AddonsController, BrandsController, AddonsCategoriesController],
-  providers: [AppService, UsersService, JwtService],
+  controllers: [AppController, UsersController, BrandsController],
+  providers: [AppService, UsersService, JwtService, BrandsService],
 })
 export class AppModule {}

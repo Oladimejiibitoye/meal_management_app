@@ -9,23 +9,23 @@ export class BrandModel extends BaseModel {
   @Column({ type: columnTypes.string})
   brand_name: string;
   @Column({ type: columnTypes.uuid})
-  user_Id: string;
+  user_id: string;
   @Relation({
     modelClass: UserModel,
     relation: relationTypes.BelongsToOneRelation,
-    join: { from: 'brands.user_Id', to: 'users.id'}
+    join: { from: 'brands.user_id', to: 'users.id'}
   })
   user: UserModel;
   @Relation({
     modelClass: AddonModel,
     relation: relationTypes.HasManyRelation,
-    join: { from: 'brands.id', to: 'addons.brand_Id'}
+    join: { from: 'brands.id', to: 'addons.brand_id'}
   })
   addons: AddonModel[];
   @Relation({
     modelClass: AddonCategoryModel,
     relation: relationTypes.HasManyRelation,
-    join: {from: 'brands.id', to: 'addons_categories.brand_Id' }
+    join: {from: 'brands.id', to: 'addons_categories.brand_id' }
   })
   addons_categories: AddonCategoryModel[]
 

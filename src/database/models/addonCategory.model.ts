@@ -9,11 +9,11 @@ export class AddonCategoryModel extends BaseModel {
   @Column({ type: columnTypes.string})
   name: string;
   @Column({ type: columnTypes.uuid})
-  brand_Id: string;
+  brand_id: string;
   @Relation({
     modelClass: BrandModel,
     relation: relationTypes.BelongsToOneRelation,
-    join: {from: 'addons_categories.brand_Id', to: 'brands.id'}
+    join: {from: 'addons_categories.brand_id', to: 'brands.id'}
   })
   brand: BrandModel;
   @Relation({
