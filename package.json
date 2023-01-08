@@ -34,12 +34,10 @@
     "class-validator": "^0.13.2",
     "dotenv": "^16.0.3",
     "knex": "^2.3.0",
-    "knex-db-manager": "^0.7.0",
     "nest-knexjs": "^0.0.12",
     "nestjs-objection": "^3.0.0",
     "objection": "^3.0.1",
     "pg": "^8.8.0",
-    "pg-escape": "^0.2.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
     "uuid": "^9.0.0"
