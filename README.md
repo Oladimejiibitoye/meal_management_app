@@ -64,4 +64,4 @@ https://meal-management-api-stephenibitoye.koyeb.app/api/v1
 
 ## Stay in touch
 
-- Author - [Ibitoye Oladimji](stephen_ibitoye@yahoo.com)
+- Author - [Ibitoye Oladimeji](stephen_ibitoye@yahoo.com)
