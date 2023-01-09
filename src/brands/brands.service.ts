@@ -160,6 +160,7 @@ export class BrandsService {
         .where({brand_id: brandId})
         .select(addonId)
         .update(updatedAddonDto)
+        .returning('*')
       return updatedAddonWithoutCatgory
     } catch (error) {
       throw new ForbiddenException(error.message)
