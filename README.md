@@ -6,11 +6,11 @@ Building a backend API for a meal management application that allows users to cr
 
 ## General
 
-1. Create .env file from the .env.example to successfully run the api on your local
-2. Run $ npm install to install all dependencies
-3. Run $ npm run create:db to create database
-4. Run $ npm run migrate to run migration file
-5. Run $ npm run start:dev to start app in watch mode
+1. Create `.env` file from the `.env.example` to successfully run the api on your local
+2. Run `npm install` to install all dependencies
+3. Run `npm run create:db` to create database
+4. Run `npm run migrate` to run migration file
+5. Run `npm run start:dev` to start app in watch mode
 
 ## Installation
 
@@ -51,14 +51,14 @@ $ npm run start:prod
 
 ```bash
 # production mode
-https://meal-management-api-stephenibitoye.koyeb.app/api-doc
+<https://meal-management-api-stephenibitoye.koyeb.app/api-doc>
 
 ```
 
 ## Deployed API URL
 
 ```bash
-https://meal-management-api-stephenibitoye.koyeb.app/api/v1
+<https://meal-management-api-stephenibitoye.koyeb.app/api/v1>
 
 ```
 
