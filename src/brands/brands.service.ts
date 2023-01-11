@@ -157,9 +157,8 @@ export class BrandsService {
       }
       //update existing addon
       const updatedAddonWithoutCatgory = await this.addonModel.query()
-        .where({brand_id: brandId})
-        .select(addonId)
-        .update(updatedAddonDto)
+        .where({brand_id: brandId, id: addonId})
+        .patch(updatedAddonDto)
         .returning('*')
       return updatedAddonWithoutCatgory
     } catch (error) {
